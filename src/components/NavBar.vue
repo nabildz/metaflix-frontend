@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-white shadow">
+  <nav class="bg-gradient-to-b from-white via-white to-gray-50 shadow">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex justify-between h-24">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -103,25 +103,25 @@
               />
             </svg>
           </div>
-          <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+          <div class="hidden sm:ml-16 sm:flex sm:space-x-8">
             <!-- Current: "border-nice-red-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
             <a
               href="#"
               class="border-nice-red-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
             >
-              Movies
+              MOVIES
             </a>
             <a
               href="#"
               class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
             >
-              Watched
+              WATCHED
             </a>
             <a
               href="#"
               class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
             >
-              Wishlist
+              WISHLIST
             </a>
           </div>
         </div>
