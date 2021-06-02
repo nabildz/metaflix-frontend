@@ -2,8 +2,8 @@
   <div class="">
     <div class="mx-auto py-4 px-4 max-w-7xl lg:py-6">
       <div class="space-y-12">
-        <h2 class="text-xl font-medium tracking-tight sm:text-3xl">
-          New Movies
+        <h2 class="text-lg font-medium tracking-tight sm:text-3xl">
+          ✨ Trending flicks
         </h2>
 
         <ul
