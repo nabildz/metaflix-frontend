@@ -1,6 +1,6 @@
 <template>
 <div class="min-h-screen bg-gray-100">
-  <NavBar/>
+  <NavBar />
    <transition name="fade" mode="out-in">
           <div class=" max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="px-3 py-4 sm:px-0">
@@ -15,8 +15,6 @@
 <script setup>
 import NavBar from './components/NavBar.vue'
 </script>
-
-
 
 <style>
 .fade-enter-active,
