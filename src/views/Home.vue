@@ -1,8 +1,8 @@
 <template>
   <div class="">
     <div class="mx-auto py-4 px-4 max-w-7xl lg:py-6">
-      <div class="space-y-12">
-        <h2 class="text-lg font-medium tracking-tight sm:text-3xl">
+      <div class="space-y-8 sm:space-y-12">
+        <h2 class="text-xl font-medium tracking-tight sm:text-3xl">
           ✨ Trending flicks
         </h2>
         <svg
@@ -153,7 +153,7 @@ export default {
   methods: {
     async getMovies() {
       this.isLoading = !this.isLoading;
-      fetch("http://movie-app-backend.test/api/movies", {
+      fetch("https://metaflix.asaas.ly/api/movies", {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -165,7 +165,7 @@ export default {
         .then((data) => (this.isLoading = !this.isLoading));
     },
     async add(movie, status) {
-      fetch("http://movie-app-backend.test/api/movies", {
+      fetch("https://metaflix.asaas.ly/api/movies", {
         method: "POST",
         body: JSON.stringify({
           title: movie.title,

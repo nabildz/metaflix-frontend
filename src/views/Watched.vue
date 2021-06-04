@@ -1,8 +1,8 @@
 <template>
   <div class="">
     <div class="mx-auto py-4 px-4 max-w-7xl lg:py-6">
-      <div class="space-y-12">
-        <h2 class="text-lg font-medium tracking-tight sm:text-3xl">
+        <div class="space-y-8 sm:space-y-12">
+        <h2 class="text-xl font-medium tracking-tight sm:text-3xl">
           👀 What you've watched so far
         </h2>
 
@@ -28,7 +28,7 @@
           />
         </svg>
         <ul
-          v-else
+          v-else-if="!isLoading && movies.length > 0"
           class="space-y-12 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-6 lg:gap-y-10 lg:space-y-0"
         >
           <li v-for="(movie, index) in movies" :key="movie.id">
@@ -118,6 +118,11 @@
             </div>
           </li>
         </ul>
+        <div class="max-h-screen max-w-7xl mx-auto sm:px-6 lg:px-8" v-else>
+          <p class="text-center text-xl text-gray-400">
+            No movies in list add some :(
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -147,7 +152,7 @@ export default {
     getMovies() {
       this.isLoading = true;
 
-      fetch("http://movie-app-backend.test/api/movies/watched", {
+      fetch("https://metaflix.asaas.ly/api/movies/watched", {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -162,7 +167,7 @@ export default {
       if (movie.rating != rating) {
         this.movies[key].rating = rating;
 
-        fetch("http://movie-app-backend.test/api/movies/", {
+        fetch("https://metaflix.asaas.ly/api/movies/", {
           method: "PUT",
           body: JSON.stringify({
             rating: rating,
@@ -184,7 +189,7 @@ export default {
       }
     },
     remove(movie, key) {
-      fetch("http://movie-app-backend.test/api/movies/", {
+      fetch("https://metaflix.asaas.ly/api/movies/", {
         method: "DELETE",
         body: JSON.stringify({
           id: movie.id,
@@ -198,11 +203,11 @@ export default {
           return response.json();
         })
         .then(function (data) {
-         
           toast(data.message, {
             toastClassName: "tw-success",
           });
-        }).then(() => ( this.getMovies()));
+        })
+        .then(() => this.getMovies());
     },
   },
 };

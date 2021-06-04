@@ -1,20 +1,23 @@
 <template>
-<div class="min-h-screen bg-gray-100">
-  <NavBar />
-   <transition name="fade" mode="out-in">
-          <div class=" max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="px-3 py-4 sm:px-0">
-              <router-view />
-            </div>
-          </div>
-        </transition>
-          </div>
+  <div class="min-h-screen bg-gray-100">
+    <NavBar />
+    <transition name="fade" mode="out-in">
+      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="px-3 py-4 sm:px-0">
+          <router-view />
+        </div>
+      </div>
+    </transition>
+  </div>
 
 </template>
 
 <script setup>
-import NavBar from './components/NavBar.vue'
+import NavBar from "./components/NavBar.vue";
 </script>
+
+
+
 
 <style>
 .fade-enter-active,
